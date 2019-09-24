@@ -32,7 +32,7 @@ var flgtout2;
 //var catact;
 
 $(document).ready(function(){
-//  if (isvalidbrowser())       .... para controlar el browser .....
+
 var screenW=window.screen.availWidth;
 var screenH=window.screen.availHeight;
 
@@ -45,9 +45,7 @@ var numi=5;
 var wi=12;
 var vw=parseInt((1/2)*(100 - (numi*wi + (numi - 1)*sep)));
 for (var i = 1; i < 6; i++) {
-	//$("#ig" + i).css("position", "absolute");
-	//$("#ig" + i).css("width", 12 + "vw");
-	//$("#ig" + i).css("height", 12 + "vw");
+
 	$("#ig" + i).css("left", (i-1)*(wi + sep) + vw + "vw");
 
 	if ( i % 2 == 0) {
@@ -58,10 +56,6 @@ for (var i = 1; i < 6; i++) {
 }
 
 });
-// *******************************************************************************
-function isvalidbrowser() {
-	return true;
-}
 
 function setgrupo(g, img) {
     glb_grupo=g;
@@ -76,11 +70,6 @@ function setgrupo(g, img) {
 		$("#a" + i).css("left", i*28 + "vw");
 		$("#a" + i).css("top", "45vh");
     }
-//
-//AAVVPP
-//glb_audio=1;
-//PlaySound("beep1");
-//return;
 
 	jQT.goTo("#audio", "flip");
 }	// end function setgrupo
@@ -114,15 +103,9 @@ function setcat(c, img) {
 
 function init(grp, opta, cat) {
 
-// LLamada desde el Home .... grupo grp=(0,1,2,...,7), opcion audio opta=(0,1,2,3), la categoria cat=(1, 2, .... ,6)
-// arrgrupo = ["&", "R", "G", "H", "J", "V", "Z", "Y"]  definido en funcion creartablero
-// a=0  No escuchar, no hablar
-// a=1  Solo escuchar
-// a=2  Solo hablar
-// a=3  escuchar  y  hablar
-//glb_grupo=grp;
-//glb_audio=opta;
-//glb_cat=cat;
+// LLamada desde el Home .... grupo grp=(0,1,2,...,7), 
+// opcion audio opta=(0,1,2,3), 
+// la categoria cat=(1, 2, .... ,6)
 
 PlaySound("beep1");
 
@@ -146,77 +129,42 @@ PlaySound("beep1");
 
 }
 
-
 function creartablero(grp, cat) {
 //  AAVVPP  const arrgrupo = ["&", "R", "G", "H", "J", "V", "Z", "Y"];
 const arrgrupo = ["&", "R", "R", "R", "R", "R", "Z", "Y"];
 
 var numfyc = [ [0, 0], [2, 3], [3, 4], [4, 5], [5, 6] ];
 
-nf=numfyc[cat][0];
-nc=numfyc[cat][1];
 var ntarj;
-ntarj = nf*nc;
-
-var screenW=window.screen.availWidth;
-var screenH=window.screen.availHeight;
-var tpos = []; 		            // arreglo con posicx y posicy para cada imagen
-var ktew;  					    // width de imagen
-var ktex; 						// posic x inicial ... se calcula dependiendo de .... ver creartablero(cat)
-var ktey; 						// posic y inicial ... se calcula dependiendo de .... ver creartablero(cat)
-var ktew2;
+ntarj = numfyc[cat][0]*numfyc[cat][1];
 
 // ### DV ###
 $("#juego").addClass("tablero"+ ntarj);
 
 // Total imagenes disponibles por grupo(imgGn.png) donde G=("R", "G", "H", "J"...) y n=(1,2,3.....)
-const arrnumimg = [0, 12, 12, 12, 12, 12, 12, 12];
+const arrnumimg = [0, 20, 20, 20, 20, 20, 20, 20];
 
 var imgarrfilen = [];	// nombres de archivo de imagenes
-var sep;
+
 var arr_sg_html  = [];
 var arr_bk_html  = [];
 
-if (screenW < screenH) {  		// tablet
-	screenW=screen.availHeight;
-	screenH=screen.availWidth;
-}
 
-// ************** RECALCULANDO ancho de imagen ************************
-ktew=parseInt(screenW/(nc + 2 + (nc-1)*0.1));		// nuevo ancho de imagen recalculado
-ktew2=parseInt(screenH/(nf + 2 + (nf-1)*0.1));
 
-if ( ktew2 < ktew ) {
-   ktew=ktew2;
-}
-sep=parseInt(0.1*ktew);
-
-//ktex=ktew;
-//ktey=parseInt((1/2)*(screenH - (nf*ktew + (nf - 1)*sep)));
-
-ktex=parseInt((1/2)*(screenW - (nc*ktew + (nc - 1)*sep)));
-ktey=0.5*ktew;
-
-var p=1;
-var x;
-var y;
 crearalazar(grp, ntarj, arrnumimg[grp]);
 
 for (var i = 1; i < arrnumimg[grp] + 1; i++) {
 	imgarrfilen[i]= arrgrupo[grp] + i		// cada archivo de la forma  <cat>.<i>
 }
-
-	for (var i = 1; i < nf + 1; i++) {				// por filas
-		tpos[i]=[];
-		for (var j = 1; j < nc + 1; j++) {			// por columnas
+var p=1;
+	for (var i = 1; i < ntarj+1; i++) {				// por filas
 		$('#tb').append('<div id=tj' + p + ' class=tarjeta>');
 		$('#tj' + p).append('<div id=tji' + p + ' class=tarjeta-inner>');
 		//crear los elementos para los archivos de sonido
 			$("#sound" + p).remove();
 			$("#tj" + p).append('<audio id=sound' + p  +  ' src=sounds/sound' + imgarrfilen[tdig[p]] + '.mp3/>');
 		//crear los elementos para las imagenes
-			tpos[i][1] = i;  // fila
-			tpos[i][2] = j;  // columna
+
 			$("#sg" + p).remove();
 			$("#bk" + p).remove();
 			var stronclick=' onclick="clickimg(' +  p + ',' + ntarj + ')"  ';
@@ -228,23 +176,10 @@ arr_bk_html[p] = '<div class=signos id=bk' + p +  stronclick +'><a><img width=10
 			$("#tji" + p).append(arr_sg_html[p]);
 			$("#tji" + p).append(arr_bk_html[p]);
 
-			//$("#bk" + p).css("display", "block");
-			//$("#sg" + p).css("display", "block");
-			x = ktex + ktew*(j - 1) + (j - 1)*sep;
-			y = ktey + ktew*(i - 1) + (i - 1)*sep;
-
-			//$("#sg" + p).css("position", "absolute");
-			//$("#sg" + p).css("left", x + "px");
-			//$("#sg" + p).css("top", y + "px");
-			//$("#bk" + p).css("position", "absolute");
-			//$("#bk" + p).css("left", x + "px");
-			//$("#bk" + p).css("top", y + "px");
-
 			$("#tji" + p).append('</div>');  // cierre tag div para class tarjeta-inner
 			$("#tj" + p).append('</div>');  // cierre tag div para class tarjeta
 			p=p+1;
-		}	// for j
-	}	// for i
+	 }	// for i
 
 
 }  // end function creartablero
@@ -332,7 +267,6 @@ tact=tdig[n];
 	if (ntoque == 1) {
 		//  PRIMER TOQUE
 		// *******************************************
-		// alert("PRIMER TOQUE... ntoque=" + ntoque + " ..compara ... " + (n == nant) );
 		PlaySound(strsound);
 		arrtoque[1] = n;
 		clearTimeout(flgtout);
@@ -344,7 +278,6 @@ tact=tdig[n];
 	}else{
 		//  SEGUNDO TOQUE
 			if ( n != nant ) {		// para controlar repeticion del Primer toque
-				// alert("SEGUNDO TOQUE... ntoque=" + ntoque + " ..compara ... " + (n == nant) );
 				arrtoque[2] = n;
 				clearTimeout(flgtout);
 				mostrar(arrtoque[2]);
@@ -363,9 +296,7 @@ tact=tdig[n];
 					arrmatch.push(arrtoque[2]);
 // ***************************************************************************************************
 					nummatches++;
-					//alert("MATCH .... entre ... " + nant + " ..y.. " + n);
 				}else{          // NOT MATCH
-					//alert("NOT NOT NOT MATCH .... entre ... " + nant + " ..y.. " + n);
 					PlaySound(strsound);
 					clearTimeout(flgtout1);
 					flgtout1=setTimeout( "ocultar(arrtoque[1])", 500);
@@ -410,7 +341,7 @@ $("#bk" + n).show("puff", {   }, 500);
 
 function desaparecer(n) {
 var flgtout;
-//flgtout=setTimeout( "reactivartodo()", 500, ntarj);
+
 	$("#sg" + n).remove();
 	$("#bk" + n).remove();
 
@@ -447,7 +378,7 @@ function reactivartodo(ntarj) {
 	for (var i = 1; i < ntarj + 1; i++) {
 		reactivar(i);
 	}
-	//  ****************   FALTA EXCEPTUAR LAS QUE HAN HECHO MATCH .... arrmatch
+	//  ****************  DESACTIVAR AR LAS QUE HAN HECHO MATCH .... arrmatch
 
 	for (var x = 0; x < arrmatch.length; x++) {
 		desactivar(arrmatch[x]);

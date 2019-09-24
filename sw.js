@@ -3,7 +3,6 @@ var filesToCache = [
   '/',
   '/index.html',
   '/js/main.js',
-  '/js/match.js',
   '/js/dimelo.js',
   '/sounds/beep1.mp3',
   '/sounds/ganador.mp3',
@@ -64,7 +63,6 @@ var filesToCache = [
   '/jqtouch/jqtouch.js',
   '/jqtouch/jquery-1.7.1.min.js',
   '/jqtouch/jquery-ui-1.10.4.js',
-  '/css/match.css'
   '/css/dimelo.css'
 ];
 

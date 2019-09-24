@@ -1,33 +1,33 @@
 <html>
-<head> 
+<head>
 
-	<title>Match Game ...</title>     
+	<title>Match Game ...</title>
 	<link type="text/css" rel="stylesheet" media="screen" href="jqtouch/jqtouch.css">
-	<link type="text/css" rel="stylesheet" media="screen" href="css/match.css">
-  
+	<link type="text/css" rel="stylesheet" media="screen" href="css/dimelo.css">
+
     <!-- this line removes any default padding and style. you might only need one of these values set. -->
   <style> body {padding: 0; margin: 0;} </style>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="gray"/>
-  <!-- Fullscreen para ios --> 
+  <!-- Fullscreen para ios -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-                                                                  
-<link rel="icon" href="favicon.ico" type="image/x-icon" />  
-<link rel="apple-touch-icon" href="images/hello-icon-152.png">   
-<meta name="theme-color" content="gray"/>  
-<meta name="apple-mobile-web-app-capable" content="yes">  
-<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
-<meta name="apple-mobile-web-app-title" content="Hello World"> 
-<meta name="msapplication-TileImage" content="images/hello-icon-144.png">  
+
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="images/hello-icon-152.png">
+<meta name="theme-color" content="gray"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Hello World">
+<meta name="msapplication-TileImage" content="images/hello-icon-144.png">
 <meta name="msapplication-TileColor" content="#FFFFFF">
 
 	<script src="jqtouch/jquery-1.7.1.min.js"></script>
 	<script src="jqtouch/jquery-ui-1.10.4.js"></script>
 	<!-- <script src="jqtouch/jquery.flip.min.js"></script>  -->
 	<script type="text/javascript" src="jqtouch/jqtouch.js"></script>
-	<script type="text/javascript" src="js/match.js"></script>
+	<script type="text/javascript" src="js/dimelo.js"></script>
 
 
 </head>
@@ -39,11 +39,11 @@
 			<div id="g3" onclick="setgrupo(3, 'grupoJ.png' )"><a><img  id="ig3" src="images/grupoJ.png" /></a></div>
 			<div id="g4" onclick="setgrupo(4, 'grupoV.png' )"><a><img  id="ig4" src="images/grupoV.png" /></a></div>
 			<div id="g5" onclick="setgrupo(5, 'grupoH.png' )"><a><img  id="ig5" src="images/grupoH.png" /></a></div>
-			
+
 			<audio hidden="hidden" src="sounds/beep1.mp3"  id="beep1" />
-		</div>  
+		</div>
 	</div> <!-- home -->
-	
+
 	<div id="audio">
 		<div id="i2"></div>
 			<div id="a1"  onclick="setaudio(1, 'audio1.png')"><a><img width="100px" height="100px"  src="images/audio1.png" /></a></div>
@@ -52,9 +52,9 @@
 			<div id="a3"  onclick='setaudio(3, "audio3.png")'><a><img width="100px" height="100px"  src="images/audio3.png" /></a></div>
     		<div id="a4"  onclick='setaudio(4, "audio4.png")'><a><img width="100px" height="100px"  src="images/audio4.png" /></a></div>
             -->
- 
+
 	</div> <!-- audio -->
-	
+
 	<div id="categ">
 		<div id="i3"></div>
 		<div id="i4"></div>
@@ -66,17 +66,17 @@
 	<div id="juego">
 		<div class="tablero" id="tb">
 			<div onclick="gohome()"><img id="arrl" src="images/arrowleft.png" /></div>
-		</div> <!-- tablero --> 
-	</div> <!-- juego --> 
-	
+		</div> <!-- tablero -->
+	</div> <!-- juego -->
+
 	<div id="finjuego">
 		     <div onclick="gohome()"><img id="fj" src="images/arrowleft.png" /></div>
 		<div id="splash2">
 			<div onclick="gohome()"><img src="images/alegre2.gif" /></div>
 			<audio hidden="hidden" src="sounds/ganador.mp3"  id="ganador" />
-		</div>  
+		</div>
 	</div> <!-- finjuego -->
-                                  
-<script src="js/main.js"></script>	
+
+<script src="js/main.js"></script>
 	</body>
 	</html>
