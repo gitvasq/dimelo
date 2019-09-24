@@ -9,9 +9,8 @@ body {
   background-size: 100vw 100vh;
 }
 body > * {
-/*
-
-*/
+/* override jqtouch.css */
+min-height: 320px !important;
 }
 
 h1, h2 {
@@ -28,16 +27,29 @@ p {
 }
 
 /*  *********  HOME ********* */
-#home, #audio, #categ, #juego, #finjuego{
-  background-color: rgba(255,255,255,0.2);
-  max-width: 90vw;
-  height: 90vh;
-  margin: 5vh 5vw;
+#home, #audio, #categ, #xxjuego, #finjuego{
+  background-color: rgba(255,255,255,0.1);
+  width: 80vw;
+  height: 75vh;
+  margin: 12.5vh 10vw;
 }
+
+
+/* **** HOME *** */
+#ig1, #ig2, #ig3, #ig4, #ig5 {
+/*    position: absolute;*/
+    height: 22vw;
+    width: 22vw;
+    float: left;
+    margin: 2.3vw;
+}
+#ig4{margin-left: 13.3vw}
+
+
 #splash, #splash2 {
 /*    position: absolute;
     top: 15%;
-*/   
+*/
 }
 #splash2 {
 /*    position: absolute;
@@ -45,30 +57,24 @@ p {
 }
 
 /*  *********  JUEGO ********* */
-
-#juego.tablero6{
-  background-color: rgba(255,5,255,0.2);
+#juego.tablero12,
+#juego.tablero6 {
+  text-align: center !important;
+  align-items: center;
+  display: flex;
+  width:100%;
+  height: 100%;
+  align-items: center;
+  display: flex !important;
+  background-color: rgba(0,0,0,0.4);
 }
-#juego.tablero12{
-  background-color: rgba(2,255,255,0.2);
+#juego .tablero{
+  display: inline-block !important;
+  vertical-align: middle;
+  margin: auto;
 }
 .tarjeta{
-  margin: 1vw;
-  float: left;
-}
-#juego.tablero6 .tarjeta{
-  width: 28vw;
-  height: 28vw;
-  margin: 1vw;
-  float: left;
-}
-#juego.tablero12 .tarjeta{
-  width: 20.5vw;
-  height: 20.5vw;
-  max-height: 26vh;
-  max-width: 26vh;
-  margin: 1vw;
-  float: left;
+  display: inline-block !important;
 }
 
 .tarjeta-inner{
@@ -83,20 +89,139 @@ p {
     height: 100%;
 }
 
-.xxxxxsignos {
-    /* position: absolute;
-    margin: 0; */
-	width: 300px;		/*  ANCHO DE CADA IMAGEN *********************************** */
-}
-
 #arrl, #fj {
     height: 58px;
     width: 75px;
 }
-#ig1, #ig2, #ig3, #ig4, #ig5 {
-/*    position: absolute;*/
-    height: 14vw;
-    width: 14vw;
-    float: left;
+div.gohome{
+  position: fixed;
+  top: 2vw;
+  left: 2vw;
+  float: left;
+}
+
+/* *** iPhone vertical *** */
+@media (max-aspect-ratio: 3/4) {
+  #juego.tablero12 .tablero{
+    height: 120vw;
+    width: 90vw;
+  }
+  #juego.tablero12 .tarjeta{
+    height: 28vw;
+    width: 28vw;
     margin: 1vw;
+  }
+  #juego.tablero6 .tablero{
+    height: 126vw;
+    width: 84vw;
+  }
+  #juego.tablero6 .tarjeta{
+    height: 38vw;
+    width: 38vw;
+    margin: 2vw;
+  }
+}
+/* *** Vertical tablero12 = 4w x 3h  tablero6 = 3w x 2h ****/
+@media (min-aspect-ratio: 3/4) {
+  #juego.tablero12 .tablero{
+    height: 100vw;
+    width: 75vw;
+  }
+  #juego.tablero12 .tarjeta{
+    height: 23vw;
+    width: 23vw;
+    margin: 1vw;
+  }
+  #juego.tablero6 .tablero{
+    height: 105vw;
+    width: 70vw;
+  }
+  #juego.tablero6 .tarjeta{
+    height: 31vw;
+    width: 31vw;
+    margin: 2vw;
+  }
+}
+@media (min-aspect-ratio: 1/1) {
+  #juego.tablero12 .tablero{
+    height: 63vw;
+    width: 84vw;
+  }
+  #juego.tablero12 .tarjeta{
+    height: 19vw;
+    width: 19vw;
+    margin: 1vw;
+  }
+  #juego.tablero6 .tablero{
+    height: 58vw;
+    width: 87vw;
+  }
+  #juego.tablero6 .tarjeta{
+    height: 25vw;
+    width: 25vw;
+    margin: 2vw;
+  }
+}
+/* *** HORIZONTAL tablero12 = 4w x 3h  tablero6 = 3w x 2h ****/
+@media (min-aspect-ratio: 4/3) {
+  #juego.tablero12 .tablero{
+    height: 75vh;
+    width:100vh;
+  }
+  #juego.tablero12 .tarjeta{
+    height: 23vh;
+    width: 23vh;
+    margin: 1vh;
+  }
+  #juego.tablero6 .tablero{
+    height: 70vh;
+    width: 105vh;
+  }
+  #juego.tablero6 .tarjeta{
+    height: 31vh;
+    width: 31vh;
+    margin: 2vh;
+  }
+}
+/* *** iPhone horizontal *** */
+@media (min-aspect-ratio: 5/3) {
+  #juego.tablero12 .tablero{
+    height: 90vh;
+    width: 120vh;
+  }
+  #juego.tablero12 .tarjeta{
+    height: 28vh;
+    width: 28vh;
+    margin: 1vh;
+  }
+  #juego.tablero6 .tablero{
+    height: 84vh;
+    width: 126vh;
+  }
+  #juego.tablero6 .tarjeta{
+    height: 38vh;
+    width: 38vh;
+    margin: 2vh;
+  }
+}
+
+@media (min-aspect-ratio: 12/5) {
+  #juego.tablero12 .tablero{
+    height: 30vw;
+    width: 90vw;
+  }
+  #juego.tablero12 .tarjeta{
+    height: 13vw;
+    width: 13vw;
+    margin: 1vh;
+  }
+  #juego.tablero6 .tablero{
+    height: 15vw;
+    width: 90vw;
+  }
+  #juego.tablero6 .tarjeta{
+    height: 13vw;
+    width: 13vw;
+    margin: 1vw;
+  }
 }
