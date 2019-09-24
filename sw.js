@@ -4,6 +4,7 @@ var filesToCache = [
   '/index.html',
   '/js/main.js',
   '/js/match.js',
+  '/js/dimelo.js',
   '/sounds/beep1.mp3',
   '/sounds/ganador.mp3',
   '/sounds/soundR1.mp3',
@@ -18,6 +19,14 @@ var filesToCache = [
   '/sounds/soundR10.mp3',
   '/sounds/soundR11.mp3',
   '/sounds/soundR12.mp3',
+  '/sounds/soundR13.mp3',
+  '/sounds/soundR14.mp3',
+  '/sounds/soundR15.mp3',
+  '/sounds/soundR16.mp3',
+  '/sounds/soundR17.mp3',
+  '/sounds/soundR18.mp3',
+  '/sounds/soundR19.mp3',
+  '/sounds/soundR20.mp3',
   '/css/img/bg.jpg',
   '/images/arrowleft.png',
   '/images/imgR0.png',
@@ -33,6 +42,14 @@ var filesToCache = [
   '/images/imgR10.png',
   '/images/imgR11.png',
   '/images/imgR12.png',
+  '/images/imgR13.png',
+  '/images/imgR14.png',
+  '/images/imgR15.png',
+  '/images/imgR16.png',
+  '/images/imgR17.png',
+  '/images/imgR18.png',
+  '/images/imgR19.png',
+  '/images/imgR20.png',
   '/images/grupoR.png',
   '/images/grupoG.png',
   '/images/grupoV.png',
@@ -48,6 +65,7 @@ var filesToCache = [
   '/jqtouch/jquery-1.7.1.min.js',
   '/jqtouch/jquery-ui-1.10.4.js',
   '/css/match.css'
+  '/css/dimelo.css'
 ];
 
 
