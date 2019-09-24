@@ -46,41 +46,12 @@ p {
 	width: 300px;		/*  ANCHO DE CADA IMAGEN *********************************** */
 }
 
-#nj, #fj {
-/*    
-    width: 75px;
-    height: 57px;
-    -moz-border-image: url(img/arrowlpng.png) 0 8 0 14;
-    -webkit-border-image: url(img/arrowlpng.png) 0 8 0 14;
-
-    -o-border-image: url(img/arrowlpng.png) 0 8 0 14;
-*/
-}
-
 #arrl, #fj {	
     height: 58px;
     width: 75px;
 }
-
-#gr {
-position: absolute;
-    top: 45px;
-    left: 15vw;
-}
-#gg {
-position: absolute;
-    top: 45px;
-    left: 30vw;
-}
-#gv {
-position: absolute;
-    top: 45px;
-    left: 45vw;
-
-}
-#gj {
-position: absolute;
-    top: 45px;
-    left: 60vw;
-
+#ig1, #ig2, #ig3, #ig4, #ig5 {	
+    position: absolute;
+    height: 12vw;
+    width: 12vw;
 }
