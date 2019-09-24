@@ -3,7 +3,6 @@ var filesToCache = [
   '/',
   '/index.html',
   '/js/main.js',
-  '/js/match.js',
   '/js/dimelo.js',
   '/sounds/beep1.mp3',
   '/sounds/ganador.mp3',
