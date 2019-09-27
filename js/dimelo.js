@@ -253,7 +253,7 @@ function gohome() {
 
 function gofinjuego() {
 	$("#tb").remove();    //  ???????????  remover  tablero ??????????????
-	PlaySound("ganador");
+	
 	jQT.goTo("#finjuego", "flip");
 }	// end function gohome
 
@@ -318,9 +318,10 @@ tact=tdig[n];
 	flgtout=setTimeout( "reactivartodo()", 1000, ntarj);
     //////console.log(' nummatches: ' +  nummatches + ' ntarj: ' + ntarj);
 	if (nummatches == ntarj/2) {
+		PlaySound("ganador");
 		nummatches=0;
 		clearTimeout(flgtout1);
-		flgtout1=setTimeout( "gofinjuego();", 2000);
+		flgtout1=setTimeout( "gofinjuego();", 500);
 		return;
 	}
 }	// end function clickimg
