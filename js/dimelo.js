@@ -148,7 +148,7 @@ var arr_sg_html  = [];
 var arr_bk_html  = [];
 
 
-crearalazar(grp, ntarj, arrnumimg[grp]);
+crearalazar(ntarj, arrnumimg[grp]);
 
 for (var i = 1; i < arrnumimg[grp] + 1; i++) {
 	imgarrfilen[i]= arrgrupo[grp] + i		// cada archivo de la forma  <cat>.<i>
@@ -158,18 +158,11 @@ var p=1;
 		$('#tb').append('<div id=tj' + p + ' class=tarjeta>');
 		$('#tj' + p).append('<div id=tji' + p + ' class=tarjeta-inner>');
 		//crear los elementos para los archivos de sonido
-			$("#sound" + p).remove();
-			$("#tj" + p).append('<audio id=sound' + p  +  ' src=sounds/sound' + imgarrfilen[tdig[p]] + '.mp3/>');
+		$("#tj" + p).append('<audio id=sound' + p  +  ' src=sounds/sound' + imgarrfilen[tdig[p]] + '.mp3/>');
 		//crear los elementos para las imagenes
-
-			$("#sg" + p).remove();
-			$("#bk" + p).remove();
-			var stronclick=' onclick="clickimg(' +  p + ',' + ntarj + ')"  ';
-			//console.log(stronclick);
+		var stronclick=' onclick="clickimg(' +  p + ',' + ntarj + ')"  ';
 arr_sg_html[p] = '<div class=signos id=sg' + p +  stronclick +'><a><img width=100% heigth=auto src=images/img' + imgarrfilen[tdig[p]] + '.png></a></div>';
 arr_bk_html[p] = '<div class=signos id=bk' + p +  stronclick +'><a><img width=100% heigth=auto src=images/img' + arrgrupo[grp]  + 0 + '.png></a></div>';
-			//console.log(arr_sg_html[p]);
-
 			$("#tji" + p).append(arr_sg_html[p]);
 			$("#tji" + p).append(arr_bk_html[p]);
 
@@ -181,7 +174,7 @@ arr_bk_html[p] = '<div class=signos id=bk' + p +  stronclick +'><a><img width=10
 
 }  // end function creartablero
 
-function crearalazar(grp, ntarj, numimg) {
+function crearalazar(ntarj, numimg) {
 //("------- arreglo de digitos al azar ")
 //("------- para tablero de juego ")
 
