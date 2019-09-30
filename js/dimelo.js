@@ -96,7 +96,7 @@ function setcat(c, img) {
     glb_img_cat=img;
     init(glb_grupo, glb_audio, glb_cat);
 
-}	// end function setaudio
+}	// end function setcat
 
 
 function init(grp, opta, cat) {
