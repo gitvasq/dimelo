@@ -265,7 +265,7 @@ tact=tdig[n];
 		// *******************************************
 		PlaySound(strsound);
 		arrtoque[1] = n;
-		clearTimeout(flgtout);
+		//clearTimeout(flgtout);
 		mostrar(arrtoque[1]);
 		t1=tact;
 		t2=0;
@@ -275,7 +275,7 @@ tact=tdig[n];
 		//  SEGUNDO TOQUE
 			if ( n != nant ) {		// para controlar repeticion del Primer toque
 				arrtoque[2] = n;
-				clearTimeout(flgtout);
+				//clearTimeout(flgtout);
 				mostrar(arrtoque[2]);
 
 				t2=tact;
@@ -326,7 +326,7 @@ function mostrar(n) {
 var x=n;
 $("#bk" + n).hide("drop", { direction: "down"  }, 500);
 $("#sg" + n).show("puff", {   }, 500);
-flgtout=setTimeout( "mostrar()", 1000, x);
+//flgtout=setTimeout( "mostrar()", 1000, x);
 }
 
 function ocultar(n) {
