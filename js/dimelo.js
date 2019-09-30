@@ -28,8 +28,6 @@ var flgtout2;
 
 //var numTotalClicks = 0;
 //var numSeconds = 0;
-//var	flipAnim = 'rl';
-//var catact;
 
 $(document).ready(function(){
 
@@ -97,7 +95,7 @@ function setcat(c, img) {
     glb_cat=c;
     glb_img_cat=img;
     init(glb_grupo, glb_audio, glb_cat);
-	//jQT.goTo("#next", "flip");
+
 }	// end function setaudio
 
 
@@ -148,7 +146,6 @@ var imgarrfilen = [];	// nombres de archivo de imagenes
 
 var arr_sg_html  = [];
 var arr_bk_html  = [];
-
 
 
 crearalazar(grp, ntarj, arrnumimg[grp]);
@@ -210,9 +207,8 @@ for (var i = 1; i < limd + 1; i++) {
 		tdig[f]=i;
 	}
 	arrazar[i]=f;
-// // console.log(" al azar 1 ... f=" + f + " .. tdig[f]=" + tdig[f] + " ..arrazar[i]=" + arrazar[i] + " ..para i=" + i);
 }
-// en arreglo arrazar hay 3 numeros no repetidos generados al azar entre 1 y num total de imags disponibles
+// en arreglo arrazar hay numeros no repetidos generados al azar entre 1 y num total de imags disponibles
 
 for (var i = 1; i < limd + 1; i++) {
 	f=Math.floor(Math.random() * ntarj) + 1;
@@ -259,7 +255,6 @@ function gofinjuego() {
 
 function clickimg(n, ntarj) {
 var strsound = "sound" + n;
-desactivartodo();
 
 //numTotalClicks++;
 ntoque=ntoque + 1;
@@ -295,6 +290,8 @@ tact=tdig[n];
 			/*  PARA CONSERVAR EN PANTALLA  habilitar las sigtes. 2 lineas  */
 					arrmatch.push(arrtoque[1]);
 					arrmatch.push(arrtoque[2]);
+					desactivar(arrtoque[1]);
+					desactivar(arrtoque[2]);
 // ***************************************************************************************************
 					nummatches++;
 				}else{          // NOT MATCH
@@ -302,7 +299,7 @@ tact=tdig[n];
 					clearTimeout(flgtout1);
 					flgtout1=setTimeout( "ocultar(arrtoque[1])", 500);
 					clearTimeout(flgtout2);
-					flgtout2=setTimeout( "ocultar(arrtoque[2])", 1000);
+					flgtout2=setTimeout( "ocultar(arrtoque[2])", 500);
 				}
 			nant=0;
 			ntoque=0;
@@ -314,9 +311,7 @@ tact=tdig[n];
 		}
 	}
 // "SALE DEL TOQUE"
-	clearTimeout(flgtout);
-	flgtout=setTimeout( "reactivartodo()", 1000, ntarj);
-    //////console.log(' nummatches: ' +  nummatches + ' ntarj: ' + ntarj);
+
 	if (nummatches == ntarj/2) {
 		PlaySound("ganador");
 		nummatches=0;
@@ -359,34 +354,11 @@ if (glb_audio == 1  ||  glb_audio == 3) {
 }
 
 function desactivar(n) {
+
 	$("#bk" + n).attr('onclick', 'nada()');
 	$("#sg" + n).attr('onclick', 'nada()');
 }
 
-function reactivar(n) {
-	$("#bk" + n).attr('onclick', 'clickimg(' +  n + ') ');
-	$("#sg" + n).attr('onclick', 'clickimg(' +  n + ') ');
-}
-
-function desactivartodo(ntarj) {
-
-	for (var i = 1; i < ntarj + 1; i++) {
-		desactivar(i);
-	}
-}
-
-function reactivartodo(ntarj) {
-
-	for (var i = 1; i < ntarj + 1; i++) {
-		reactivar(i);
-	}
-	//  ****************  DESACTIVAR AR LAS QUE HAN HECHO MATCH .... arrmatch
-
-	for (var x = 0; x < arrmatch.length; x++) {
-		desactivar(arrmatch[x]);
-	}
-	flgtout=setTimeout( "reactivartodo()", 500, ntarj);
-}
 
 function nada() {
 
