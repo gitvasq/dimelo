@@ -31,29 +31,15 @@ var flgtout2;
 
 $(document).ready(function(){
 
-var screenW=window.screen.availWidth;
-var screenH=window.screen.availHeight;
-
-if (screenW < screenH) {  		// tablet
-	screenW=screen.availHeight;
-	screenH=screen.availWidth;
-}
-var sep=2;
-var numi=5;
-var wi=12;
-var vw=parseInt((1/2)*(100 - (numi*wi + (numi - 1)*sep)));
-for (var i = 1; i < 6; i++) {
-
-	$("#ig" + i).css("left", (i-1)*(wi + sep) + vw + "vw");
-
-	if ( i % 2 == 0) {
-	    $("#ig" + i).css("top", "130px");
-    }else{
-	    $("#ig" + i).css("top", "80px");
-    }
-}
 
 });
+
+function Shuffle(items) {
+	for (
+		var j, x, i = items.length; i; j = parseInt(Math.random() * i), x = items[--i], items[i] = items[j], items[j] = x
+	);
+	return items;
+} // end function Shuffle
 
 function setgrupo(g, img) {
     glb_grupo=g;
@@ -175,65 +161,25 @@ arr_bk_html[p] = '<div class=signos id=bk' + p +  stronclick +'><a><img width=10
 }  // end function creartablero
 
 function crearalazar(ntarj, numimg) {
-//("------- arreglo de digitos al azar ")
-//("------- para tablero de juego ")
-
-var f;
-var arrazar = [];
-var arraux =  [];
-
-for (var i = 1; i < numimg + 1; i++) {
-		tdig[i] = 0;
-		arraux[i] = 0;
-
+//("------- tdig arreglo de digitos al azar ")
+//("------- para las imagenes del tablero de juego ")
+var nnarray2=[];
+k=1;
+for (var i = 0; i < ntarj - 1; i = i + 2) {
+   tdig[i]=k;
+   tdig[i+1]=k;
+k++;
 }
-var limd=ntarj/2;
-// cambiar para que entren al juego todas las imagenes del grupo y no solamente limd=ntarj/2
-for (var i = 1; i < limd + 1; i++) {
-	f=Math.floor(Math.random() * numimg) + 1;
-	if (tdig[f] == 0) {
-		tdig[f]=i;
-	}else{
-		while (tdig[f] > 0)  {
-			f=Math.floor(Math.random() * numimg) + 1;
-		}
-		tdig[f]=i;
-	}
-	arrazar[i]=f;
+for (var i = 0; i < numimg; i++) {
+    nnarray2[i]=i+1;
 }
-// en arreglo arrazar hay numeros no repetidos generados al azar entre 1 y num total de imags disponibles
-
-for (var i = 1; i < limd + 1; i++) {
-	f=Math.floor(Math.random() * ntarj) + 1;
-	if (arraux[f] == 0) {
-		arraux[f]=arrazar[i];
-	}else{
-		while (arraux[f] > 0)  {
-			f=Math.floor(Math.random() * ntarj) + 1;
-		}
-		arraux[f]=arrazar[i];
-	}
-
+Shuffle(nnarray2);
+Shuffle(tdig);
+for (var i = 0; i < tdig.length; i++) {
+    tdig[i]=nnarray2[ tdig[i] ];
+    //console.log(i + ' ... ' + tdig[i]);
 }
-
-for (var i = 1; i < limd + 1; i++) {
-	f=Math.floor(Math.random() * ntarj) + 1;
-	if (arraux[f] == 0) {
-		arraux[f]=arrazar[i];
-	}else{
-		while (arraux[f] > 0)  {
-			f=Math.floor(Math.random() * ntarj) + 1;
-		}
-		arraux[f]=arrazar[i];
-	}
-
-}
-
-for (var i = 1; i < ntarj + 1; i++) {
-	tdig[i]=arraux[i];
-
-}
-
+tdig.unshift(0);
 }	// end function crearalazar
 
 function gohome() {
@@ -283,8 +229,12 @@ tact=tdig[n];
 			/*  PARA CONSERVAR EN PANTALLA  habilitar las sigtes. 2 lineas  */
 					arrmatch.push(arrtoque[1]);
 					arrmatch.push(arrtoque[2]);
-					desactivar(arrtoque[1]);
-					desactivar(arrtoque[2]);
+					//desactivar(arrtoque[1]);
+					//desactivar(arrtoque[2]);
+					$("#bk" + arrtoque[1]).removeAttr("onclick");
+	                                $("#sg" + + arrtoque[1]).removeAttr("onclick");
+					$("#bk" + arrtoque[2]).removeAttr("onclick");
+	                                $("#sg" + + arrtoque[2]).removeAttr("onclick");
 // ***************************************************************************************************
 					nummatches++;
 				}else{          // NOT MATCH
