@@ -63,7 +63,6 @@ function setgrupo(g, img) {
     $("#ii2").remove();
 //  AAVVPP  opacity ??????????  style="opacity:0.46;  ?????????????????????
     $("#i2").append('<img id=ii2 width=150px height=150px src=images/' + img +  ' style="opacity:1;">');
-    style="opacity:0.2;"
 		$("#ii2").css("position", "absolute");
 		$("#ii2").css("left", "40vw");
 		$("#ii2").css("top", "12vh");
@@ -179,7 +178,7 @@ function crearalazar(ntarj, numimg) {
 //("------- tdig arreglo de digitos al azar ")
 //("------- para las imagenes del tablero de juego ")
 var nnarray2=[];
-k=1;
+var k=1;
 for (var i = 0; i < ntarj - 1; i = i + 2) {
    tdig[i]=k;
    tdig[i+1]=k;
