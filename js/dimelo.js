@@ -1,7 +1,7 @@
 var jQT = $.jQTouch({
 
 });
-
+var maxtarj=12;
 var glb_grupo;
 var glb_audio;
 var glb_cat;
@@ -29,7 +29,25 @@ var flgtout2;
 //var numSeconds = 0;
 
 $(document).ready(function(){
+var arr_sg_html  = [];
+var arr_bk_html  = [];
 
+	for (var i = 1; i < maxtarj + 1; i++) {
+		$('#tb').append('<div id=tj' + i + ' class=tarjeta>');
+		//crear los elementos para los archivos de sonido
+		$('#tj' + i).append('<audio id=sound' + i + '>');
+		$('#tj' + i).append('<div id=tji' + i + ' class=tarjeta-inner>');
+		//crear los elementos para las imagenes
+arr_sg_html[i] = '<div class=signos id=sg' + i + '><a><img width=100% heigth=auto ></a></div>';
+arr_bk_html[i] = '<div class=signos id=bk' + i + '><a><img width=100% heigth=auto ></a></div>';
+
+			$("#tji" + i).append(arr_sg_html[i]);
+			$("#tji" + i).append(arr_bk_html[i]);
+
+			$("#tji" + i).append('</div>');  // cierre tag div para class tarjeta-inner
+			$("#tj" + i).append('</div>');  // cierre tag div para class tarjeta
+
+	 }	// for i
 });
 
 function Shuffle(items) {
@@ -119,12 +137,12 @@ PlaySound("beep1");
 function creartablero(grp, cat) {
 //  AAVVPP  const arrgrupo = ["&", "R", "G", "H", "J", "V", "Z", "Y"];
 const arrgrupo = ["&", "R", "R", "R", "R", "R", "Z", "Y"];
-
 var numfyc = [ [0, 0], [2, 3], [3, 4], [4, 5], [5, 6] ];
-
 var ntarj;
 ntarj = numfyc[cat][0]*numfyc[cat][1];
-
+for (var i = ntarj+1; i < maxtarj + 1; i++) {
+	$("#tj" + i).remove();
+}
 // ### DV ###
 $("#juego").addClass("tablero"+ ntarj);
 
@@ -140,24 +158,21 @@ for (var i = 1; i < arrnumimg[grp] + 1; i++) {
 	imgarrfilen[i]= arrgrupo[grp] + i;		// cada archivo de la forma  <cat>.<i>
 }
 var p=1;
-	for (var i = 1; i < ntarj+1; i++) {				// por filas
-		$('#tb').append('<div id=tj' + p + ' class=tarjeta>');
-		$('#tj' + p).append('<div id=tji' + p + ' class=tarjeta-inner>');
+	for (var i = 1; i < ntarj+1; i++) {	
 		//crear los elementos para los archivos de sonido
-		$("#tj" + p).append('<audio id=sound' + p  +  ' src=sounds/sound' + imgarrfilen[tdig[p]] + '.mp3/>');
+		$("#sound" + p).attr('src', 'sounds/sound' + imgarrfilen[tdig[p]] + '.mp3');
 		//crear los elementos para las imagenes
-		var stronclick=' onclick="clickimg(' +  p + ',' + ntarj + ')"  ';
-arr_sg_html[p] = '<div class=signos id=sg' + p +  stronclick +'><a><img width=100% heigth=auto src=images/img' + imgarrfilen[tdig[p]] + '.png></a></div>';
-arr_bk_html[p] = '<div class=signos id=bk' + p +  stronclick +'><a><img width=100% heigth=auto src=images/img' + arrgrupo[grp]  + 0 + '.png></a></div>';
-
-			$("#tji" + p).append(arr_sg_html[p]);
-			$("#tji" + p).append(arr_bk_html[p]);
-
-			$("#tji" + p).append('</div>');  // cierre tag div para class tarjeta-inner
-			$("#tj" + p).append('</div>');  // cierre tag div para class tarjeta
-			p=p+1;
+		var stronclick='clickimg(' +  p + ',' + ntarj + ')';
+		$("#sg" + p + " img").attr('src', 'images/img' + imgarrfilen[tdig[p]] + '.png');
+		$("#bk" + p + " img").attr('src', 'images/img' + arrgrupo[grp]  + 0 + '.png');
+		$("#bk" + p + " img").attr('style', "display: inline-block;");
+        $("#sg" + p).attr('onclick', stronclick);
+        $("#bk" + p).attr('onclick', stronclick);
+        $("#sg" + p).attr('style', "display: none;");
+        $("#bk" + p).attr('style', "display: block;");
+        
+	    p=p+1;
 	 }	// for i
-
 }  // end function creartablero
 
 function crearalazar(ntarj, numimg) {
