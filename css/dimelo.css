@@ -1,59 +1,106 @@
 body {
-
-    font-family: Helvetica;
-    font-size: 14px;
-    color: #fff;
-	/* background: url(img/holz-1024x768.jpg) fixed center center; */
+  font-family: Helvetica;
+  font-size: 14px;
+  color: #fff;
+  /* background: url(img/holz-1024x768.jpg) fixed center center; */
   background-image: url("img/bg.jpg");
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
 }
 body > * {
-/* override jqtouch.css */
-min-height: 320px !important;
+  /* override jqtouch.css */
+  min-height: 320px !important;
 }
 
-h1, h2 {
-    font: bold 16px Helvetica;
-    text-shadow: rgba(255,255,255,.2) 0 1px 1px;
-    color: #000;
-    color: #eee;
-    text-align: center;
-    margin: 10px 10px 5px;
+h1,
+h2 {
+  font: bold 16px Helvetica;
+  text-shadow: rgba(255, 255, 255, 0.2) 0 1px 1px;
+  color: #000;
+  color: #eee;
+  text-align: center;
+  margin: 10px 10px 5px;
 }
 
 p {
-	margin-left: 6px;
+  margin-left: 6px;
 }
-
 /*  *********  HOME ********* */
-#home, #audio, #categ, #xxjuego, #finjuego{
-  background-color: rgba(255,255,255,0.1);
+#home,
+#audio,
+#categ,
+#finjuego {
+  background-color: rgba(255, 255, 255, 0.1);
   width: 80vw;
   height: 75vh;
   margin: 12.5vh 10vw;
 }
 
-
 /* **** HOME *** */
-#ig1, #ig2, #ig3, #ig4, #ig5 {
-/*    position: absolute;*/
-    height: 22vw;
-    width: 22vw;
-    float: left;
-    margin: 2.3vw;
+#ig1,
+#ig2,
+#ig3,
+#ig4,
+#ig5 {
+  height: 22vw;
+  width: 22vw;
+  float: left;
+  margin: 2.3vw;
 }
-#ig4{margin-left: 13.3vw}
-
-
-#splash, #splash2 {
-/*    position: absolute;
-    top: 15%;
-*/
+#ig4 {
+  margin-left: 13.3vw;
 }
-#splash2 {
-/*    position: absolute;
-*/    left: 45vw;
+
+.img1 {
+  height: 30vh;
+  opacity: 0.46;
+}
+
+#i2 {
+  position: relative;
+  left: 34vw;
+}
+#i3 {
+  position: relative;
+  left: 25vw;
+}
+#i4 {
+  position: relative;
+  left: 32vw;
+}
+
+.opt1 {
+  width: 25vw;
+  height: 15vh;
+  margin-left: 30vw;
+}
+
+#a1,
+#a2,
+#c1,
+#c2 {
+  height: 6vw;
+  width: 6vw;
+  float: left;
+  margin: 2vw;
+}
+
+#ii2,
+#ii3,
+#ii4 {
+  height: 12vw;
+  width: 12vw;
+  float: left;
+  margin-top: 3.3vw;
+}
+
+#ia1,
+#ia2,
+#ic1,
+#ic2 {
+  position: relative;
+  height: 6vw;
+  width: 6vw;
 }
 
 /*  *********  JUEGO ********* */
@@ -62,60 +109,61 @@ p {
   text-align: center !important;
   align-items: center;
   display: flex;
-  width:100%;
+  width: 100%;
   height: 100%;
   align-items: center;
   display: flex !important;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
-#juego .tablero{
+#juego .tablero {
   display: inline-block !important;
   vertical-align: middle;
   margin: auto;
 }
-.tarjeta{
+.tarjeta {
   display: inline-block !important;
 }
 
-.tarjeta-inner{
+.tarjeta-inner {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
 .signos {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
-#arrl, #fj {
-    height: 58px;
-    width: 75px;
+#arrl,
+#fj {
+  height: 58px;
+  width: 75px;
 }
-div.gohome{
+div.gohome {
   position: fixed;
   top: 2vw;
-  left: 2vw;
+  left: 2vh;
   float: left;
 }
 
 /* *** iPhone vertical *** */
 @media (max-aspect-ratio: 3/4) {
-  #juego.tablero12 .tablero{
+  #juego.tablero12 .tablero {
     height: 120vw;
     width: 90vw;
   }
-  #juego.tablero12 .tarjeta{
+  #juego.tablero12 .tarjeta {
     height: 28vw;
     width: 28vw;
     margin: 1vw;
   }
-  #juego.tablero6 .tablero{
+  #juego.tablero6 .tablero {
     height: 126vw;
     width: 84vw;
   }
-  #juego.tablero6 .tarjeta{
+  #juego.tablero6 .tarjeta {
     height: 38vw;
     width: 38vw;
     margin: 2vw;
@@ -123,40 +171,40 @@ div.gohome{
 }
 /* *** Vertical tablero12 = 4w x 3h  tablero6 = 3w x 2h ****/
 @media (min-aspect-ratio: 3/4) {
-  #juego.tablero12 .tablero{
+  #juego.tablero12 .tablero {
     height: 100vw;
     width: 75vw;
   }
-  #juego.tablero12 .tarjeta{
+  #juego.tablero12 .tarjeta {
     height: 23vw;
     width: 23vw;
     margin: 1vw;
   }
-  #juego.tablero6 .tablero{
+  #juego.tablero6 .tablero {
     height: 105vw;
     width: 70vw;
   }
-  #juego.tablero6 .tarjeta{
+  #juego.tablero6 .tarjeta {
     height: 31vw;
     width: 31vw;
     margin: 2vw;
   }
 }
 @media (min-aspect-ratio: 1/1) {
-  #juego.tablero12 .tablero{
+  #juego.tablero12 .tablero {
     height: 63vw;
     width: 84vw;
   }
-  #juego.tablero12 .tarjeta{
+  #juego.tablero12 .tarjeta {
     height: 19vw;
     width: 19vw;
     margin: 1vw;
   }
-  #juego.tablero6 .tablero{
+  #juego.tablero6 .tablero {
     height: 58vw;
     width: 87vw;
   }
-  #juego.tablero6 .tarjeta{
+  #juego.tablero6 .tarjeta {
     height: 25vw;
     width: 25vw;
     margin: 2vw;
@@ -164,20 +212,20 @@ div.gohome{
 }
 /* *** HORIZONTAL tablero12 = 4w x 3h  tablero6 = 3w x 2h ****/
 @media (min-aspect-ratio: 4/3) {
-  #juego.tablero12 .tablero{
+  #juego.tablero12 .tablero {
     height: 75vh;
-    width:100vh;
+    width: 100vh;
   }
-  #juego.tablero12 .tarjeta{
+  #juego.tablero12 .tarjeta {
     height: 23vh;
     width: 23vh;
     margin: 1vh;
   }
-  #juego.tablero6 .tablero{
+  #juego.tablero6 .tablero {
     height: 70vh;
     width: 105vh;
   }
-  #juego.tablero6 .tarjeta{
+  #juego.tablero6 .tarjeta {
     height: 31vh;
     width: 31vh;
     margin: 2vh;
@@ -185,20 +233,20 @@ div.gohome{
 }
 /* *** iPhone horizontal *** */
 @media (min-aspect-ratio: 5/3) {
-  #juego.tablero12 .tablero{
+  #juego.tablero12 .tablero {
     height: 90vh;
     width: 120vh;
   }
-  #juego.tablero12 .tarjeta{
+  #juego.tablero12 .tarjeta {
     height: 28vh;
     width: 28vh;
     margin: 1vh;
   }
-  #juego.tablero6 .tablero{
+  #juego.tablero6 .tablero {
     height: 84vh;
     width: 126vh;
   }
-  #juego.tablero6 .tarjeta{
+  #juego.tablero6 .tarjeta {
     height: 38vh;
     width: 38vh;
     margin: 2vh;
@@ -206,20 +254,20 @@ div.gohome{
 }
 
 @media (min-aspect-ratio: 12/5) {
-  #juego.tablero12 .tablero{
+  #juego.tablero12 .tablero {
     height: 30vw;
     width: 90vw;
   }
-  #juego.tablero12 .tarjeta{
+  #juego.tablero12 .tarjeta {
     height: 13vw;
     width: 13vw;
     margin: 1vh;
   }
-  #juego.tablero6 .tablero{
+  #juego.tablero6 .tablero {
     height: 15vw;
     width: 90vw;
   }
-  #juego.tablero6 .tarjeta{
+  #juego.tablero6 .tarjeta {
     height: 13vw;
     width: 13vw;
     margin: 1vw;
