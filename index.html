@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Match Game ...</title>
+    <title>Dimelo con la R</title>
     <link
       type="text/css"
       rel="stylesheet"
@@ -32,12 +32,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="images/hello-icon-152.png" />
+    <link rel="apple-touch-icon" href="images/dimelo-icon-152.png" />
     <meta name="theme-color" content="gray" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="Hello World" />
-    <meta name="msapplication-TileImage" content="images/hello-icon-144.png" />
+    <meta name="apple-mobile-web-app-title" content="Dimelo con la R" />
+    <meta name="msapplication-TileImage" content="images/dimelo-icon-144.png" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
 
     <script src="jqtouch/jquery-1.7.1.min.js"></script>
@@ -48,22 +48,32 @@
   </head>
   <body>
     <div id="home">
-      <div id="splash">
-        <div id="g1" onclick="setgrupo(1, 'grupoR.png' )">
-          <a><img id="ig1" src="images/grupoR.png"/></a>
-        </div>
-        <div id="g2" onclick="setgrupo(2, 'grupoG.png' )">
-          <a><img id="ig2" src="images/grupoG.png"/></a>
-        </div>
-        <div id="g3" onclick="setgrupo(3, 'grupoJ.png' )">
+      <div id="splash" class="mesa">
+        <div id="g1" class="opcion" onclick="setgrupo(1, 'grupoR.png' )">
+          <div class="opcion-inner">
+            <div class="signos">
+          <a><img id="ig1"  src="images/grupoR.png"/></a>
+        </div></div></div>
+        <div id="g2" class="opcion" onclick="setgrupo(2, 'grupoG.png' )">
+          <div class="opcion-inner">
+            <div class="signos">
+              <a><img id="ig2" src="images/grupoG.png"/></a>
+        </div></div></div>
+        <div id="g3" class="opcion" onclick="setgrupo(3, 'grupoJ.png' )">
+          <div class="opcion-inner">
+            <div class="signos">
           <a><img id="ig3" src="images/grupoJ.png"/></a>
-        </div>
-        <div id="g4" onclick="setgrupo(4, 'grupoV.png' )">
+        </div></div></div>
+        <div id="g4" class="opcion" onclick="setgrupo(4, 'grupoV.png' )">
+          <div class="opcion-inner">
+            <div class="signos">
           <a><img id="ig4" src="images/grupoV.png"/></a>
-        </div>
-        <div id="g5" onclick="setgrupo(5, 'grupoH.png' )">
+        </div></div></div>
+       <div id="g5" class="opcion" onclick="setgrupo(5, 'grupoH.png' )">
+          <div class="opcion-inner">
+            <div class="signos">
           <a><img id="ig5" src="images/grupoH.png"/></a>
-        </div>
+        </div></div></div>
 
         <audio hidden="hidden" src="sounds/beep1.mp3" id="beep1"></audio>
       </div>
@@ -71,41 +81,77 @@
     <!-- home -->
 
     <div id="audio">
-		<div class="img1">
-		  <div id="i2"></div>
-		</div> 
-		<div class="opt1">
-		  <div id="a1" onclick="setaudio(1, 'audio1.png')">
-			<a><img id="ia1" src="images/audio1.png"/></a>
-		  </div>
-		  <div id="a2" onclick="setaudio(2, 'audio2.png')">
-			<a><img id="ia2" src="images/audio2.png"/></a>
-		  </div>
-		</div> 
+      <div class="mesa">
+      <div class="gohome flecha" onclick="gohome()">
+        <img class="arrl" src="images/arrowleft.png" />
+      </div>
+        <div class="elegida">
+          <div class="elegida-inner">
+        <div id="i3" class="signos"></div>
+      </div>
+    </div>
+        <div class="elegida">
+          <div class="elegida-inner">
+        <div id="i4" class="signos"></div>
+      </div>
+    </div>
+      <div class="opt1 opciones">
+        <div id="a1" class="opcion" onclick="setaudio(1, 'audio1.png')">
+          <div class="opcion-inner">
+            <div class="signos">
+          <a><img id="ia1" src="images/audio1.png"/></a>
+        </div>
+      </div>
+        </div>
+        <div id="a2" class="opcion" onclick="setaudio(2, 'audio2.png')">
+          <div class="opcion-inner">
+            <div class="signos">
+          <a><img id="ia2" src="images/audio2.png"/></a>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
     </div>
     <!-- audio -->
 
     <div id="categ">
-       <div class="img1">
-		  <div id="i3"></div>
-		  <div id="i4"></div>
-       </div> 
-       <div class="opt1">
-		  <div id="c1" onclick="setcat(1, 'cat1.png')">
-			<a><img id="ic1"  src="images/cat1.png"/></a>
-		  </div>
-		  <div id="c2" onclick="setcat(2, 'cat2.png')">
-			<a><img id="ic2"  src="images/cat2.png"/></a>
-		  </div>
-      <!-- <div id="c3"  onclick='setcat(3, "cat3.png")'><a><img width="100px" height="100px"  src="images/cat3.png" /></a></div> -->
-       </div> 
+      <div class="mesa">
+      <div class="gohome flecha" onclick="gohome()">
+        <img class="arrl" src="images/arrowleft.png" />
+      </div>
+      <div class="elecciones">
+      <div class="elegida">
+        <div class="elegida-inner">
+        <div id="i2" class="signos"></div>
+      </div>
+    </div>
+    </div>
+      <div class="opt1 opciones">
+        <div id="c1" class="opcion" onclick="setcat(1, 'cat1.png')">
+          <div class="opcion-inner">
+            <div class="signos">
+          <a><img id="ic1" src="images/cat1.png"/></a>
+        </div>
+        </div>
+      </div>
+        <div id="c2" class="opcion" onclick="setcat(2, 'cat2.png')">
+          <div class="opcion-inner">
+            <div class="signos">
+          <a><img id="ic2" src="images/cat2.png"/></a>
+        </div>
+        </div>
+      </div>
+        <!-- <div id="c3"  onclick='setcat(3, "cat3.png")'><a><img width="100px" height="100px"  src="images/cat3.png" /></a></div> -->
+      </div>
+      </div>
     </div>
     <!-- categ -->
 
     <div id="juego">
       <div class="tablero" id="tb">
-        <div class="gohome" onclick="gohome()">
-          <img id="arrl" src="images/arrowleft.png" />
+        <div class="gohome flecha" onclick="gohome()">
+          <img class="arrl" id="idarrl" src="images/arrowleft.png" />
         </div>
       </div>
       <!-- tablero -->
@@ -113,11 +159,11 @@
     <!-- juego -->
 
     <div id="finjuego">
-      <div class="gohome" onclick="gohome()">
-        <img id="fj" src="images/arrowleft.png" />
+      <div class="gohome flecha" onclick="gohome()">
+        <img class="arrl" src="images/arrowleft.png" />
       </div>
-      <div id="splash2">
-        <div class="gohome" onclick="gohome()">
+      <div id="splash2" class="mesa">
+        <div class="gohome alegre" onclick="gohome()">
           <img src="images/alegre2.gif" />
         </div>
         <audio hidden="hidden" src="sounds/ganador.mp3" id="ganador"></audio>
@@ -128,4 +174,3 @@
     <script src="js/main.js"></script>
   </body>
 </html>
-

@@ -74,71 +74,22 @@ function setgrupo(g, img) {
       img +
       '>'
   );
-  /*   
-  $("#ii2").css("position", "absolute");
-  $("#ii2").css("left", "40vw");
-  $("#ii2").css("top", "12vh");
-  for (var i = 1; i < 3; i++) {
-    $("#a" + i).css("position", "absolute");
-    $("#a" + i).css("left", i * 28 + "vw");
-    $("#a" + i).css("top", "45vh");
-  }
-*/
-  jQT.goTo("#audio", "flip");
-} // end function setgrupo
-function setaudio(a, img) {
-  glb_audio = a;
-  glb_img_audio = img;
 
-  $("#ii3").remove();
-  $("#ii4").remove();
-  $("#i3").append(
-    "<img id=ii3 src=images/" +
-      glb_img_grupo +
-      '>'
-  );
-    /*   
-  $("#ii3").css("position", "absolute");
-  $("#ii3").css("left", "25vw");
-  $("#ii3").css("top", "12vh");
-    */
-  $("#i4").append(
-    "<img id=ii4  src=images/" +
-      img +
-      '>'
-  );
-      /*   
-  $("#ii4").css("position", "absolute");
-  $("#ii4").css("left", "50vw");
-  $("#ii4").css("top", "12vh");
-  for (var i = 1; i < 3; i++) {
-    $("#c" + i).css("position", "absolute");
-    $("#c" + i).css("left", i * 27 + "vw");
-    $("#c" + i).css("top", "45vh");
-  }
-      */
+  //jQT.goTo("#audio", "flip");
   jQT.goTo("#categ", "flip");
-} // end function setaudio
+} // end function setgrupo
 
 function setcat(c, img) {
+
   glb_cat = c;
   glb_img_cat = img;
-  init(glb_grupo, glb_audio, glb_cat);
-} // end function setcat
-
-function init(grp, opta, cat) {
-  // LLamada desde el Home .... grupo grp=(0,1,2,...,7),
-  // opcion audio opta=(0,1,2,3),
-  // la categoria cat=(1, 2, .... ,6)
-
-  PlaySound("beep1");
 
   // eliminar elem de arreglo con match
   for (var i = 0; i < arrmatch.length; i++) {
     arrmatch.shift();
   }
 
-  creartablero(grp, cat);
+  creartablero(glb_grupo, glb_cat);
 
   //  inicializa variables para controlar juego
   ntoque = 0;
@@ -149,10 +100,37 @@ function init(grp, opta, cat) {
   nummatches = 0;
   //numTotalClicks = 0;
   //numSeconds = 0;
+  PlaySound("beep1");
+  //jQT.goTo("#juego", "flip");
+    $("#ii3").remove();
+  $("#ii4").remove();
+  $("#i3").append(
+    "<img id=ii3 src=images/" +
+      glb_img_grupo +
+      '>'
+  );
+
+  $("#i4").append(
+    "<img id=ii4  src=images/" +
+      glb_img_cat +
+      '>'
+  );
+
+   jQT.goTo("#audio", "flip");
+} // end function setcat
+
+function setaudio(a, img) {
+
+  glb_audio = a;
+  glb_img_audio = img;
+
+  //jQT.goTo("#categ", "flip");
   jQT.goTo("#juego", "flip");
-}
+
+} // end function setaudio
 
 function creartablero(grp, cat) {
+
   //  AAVVPP  const arrgrupo = ["&", "R", "G", "H", "J", "V", "Z", "Y"];
   const arrgrupo = ["&", "R", "R", "R", "R", "R", "Z", "Y"];
   var numfyc = [[0, 0], [2, 3], [3, 4], [4, 5], [5, 6]];
@@ -198,6 +176,9 @@ function creartablero(grp, cat) {
     p = p + 1;
   } // for i
 
+$("#juego").hide();
+$("#tb").hide();
+
 } // end function creartablero
 
 function crearalazar(ntarj, numimg) {
@@ -217,7 +198,6 @@ function crearalazar(ntarj, numimg) {
   Shuffle(tdig);
   for (var i = 0; i < tdig.length; i++) {
     tdig[i] = nnarray2[tdig[i]];
-    //console.log(i + ' ... ' + tdig[i]);
   }
   tdig.unshift(0);
   //AAVVPP console.table(tdig);  //AAVVPP
@@ -225,10 +205,11 @@ function crearalazar(ntarj, numimg) {
 
 function gohome() {
   location.reload();
+  //jQT.goTo("#home", "flip");
 } // end function gohome
 
 function gofinjuego() {
-  $("#tb").remove(); //  ???????????  remover  tablero ??????????????
+  $("#tb").remove();
 
   jQT.goTo("#finjuego", "flip");
 } // end function gohome
@@ -345,4 +326,3 @@ function nada() {
   console.log(d2-d1);
 }
 */
-

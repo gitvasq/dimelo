@@ -1,4 +1,4 @@
-var cacheName = 'match-pwa';
+var cacheName = 'dimelo-pwa';
 var filesToCache = [
   '/',
   '/index.html',
@@ -27,6 +27,7 @@ var filesToCache = [
   '/sounds/soundR19.mp3',
   '/sounds/soundR20.mp3',
   '/css/img/bg.jpg',
+  '/css/img/logo-es-para-peques-weiss.png',
   '/images/arrowleft.png',
   '/images/imgR0.png',
   '/images/imgR1.png',
@@ -59,6 +60,12 @@ var filesToCache = [
   '/images/audio2.png',
   '/images/cat1.png',
   '/images/cat2.png',
+  '/images/dimelo-icon-128.png',
+  '/images/dimelo-icon-144.png',
+  '/images/dimelo-icon-152.png',
+  '/images/dimelo-icon-192.png',
+  '/images/dimelo-icon-256.png',
+  '/images/dimelo-icon-512.png',
   '/jqtouch/jqtouch.css',
   '/jqtouch/jqtouch.js',
   '/jqtouch/jquery-1.7.1.min.js',
