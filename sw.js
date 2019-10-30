@@ -1,5 +1,6 @@
 var cacheName = 'dimelo-pwa';
 var filesToCache = [
+  '/',
   'index.html',
   'js/main.js',
   'js/dimelo.js',
