@@ -108,17 +108,18 @@ p {
 }
 */
 /*  *********  JUEGO ********* */
+.pantalla.current/*,
 #juego.tablero12.current,
 #juego.tablero6.current,
 #home.current,
 #categ.current,
 #audio.current,
-#finjuego.current{
+#finjuego.current*/{
   text-align: center !important;
   align-items: center;
   display: flex !important;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
   background-image: url("img/logo-es-para-peques-weiss.png");
   background-repeat: no-repeat;
